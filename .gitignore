@@ -1,0 +1,79 @@
+# Ignore build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]eploy/
+bin/
+obj/
+
+# User-specific files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET files
+# Local IIS Express config folder
+.IISExpress/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer logs
+*.log
+
+# Windows Installer backups
+*.bak
+
+# User-specific files
+appsettings.Development.json
+appsettings.Production.json
+
+# Node.js dependencies
+node_modules/
+
+# NPM package-lock files
+npm-debug.log
+package-lock.json
+
+# ASP.NET Core Development Files
+wwwroot/lib/
+
+# Resharper
+.idea/
+
+# Web Server Logs
+logs/
+*.log
+
+# Package files
+*.nupkg
+
+# DotCover
+.idea/
+
+# Coverage folder
+coverage/
+
+# SQLite database files
+*.db
+
+# JetBrains Rider files
+.idea/
+
+# VS Code files
+.vscode/
+
+# JetBrains Rider project files
+.idea/
+
+# Ignore temporary files from editors
+*~ 
+*.swp 
+*.swo 
