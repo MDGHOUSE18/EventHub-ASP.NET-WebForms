@@ -71,9 +71,27 @@
     <Content Include="Pages\Shared\Signin.aspx" />
     <Content Include="Pages\Shared\Signup.aspx" />
     <Content Include="Pages\User\UserDashboard.aspx" />
+    <Content Include="Scripts\AdminMasterPage.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Styles\MasterAdminStyle.css" />
+    <Content Include="Styles\Styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MasterPages\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
     <Compile Include="Models\LoginUserDetails.cs" />
     <Compile Include="Pages\Admin\AdminDashboard.aspx.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
@@ -106,6 +124,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MasterPages\Admin.Master" />
+    <Content Include="MasterPages\User.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -118,9 +138,6 @@
     <Folder Include="App_Theme\" />
     <Folder Include="Data\" />
     <Folder Include="Images\" />
-    <Folder Include="MasterPages\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="Styles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

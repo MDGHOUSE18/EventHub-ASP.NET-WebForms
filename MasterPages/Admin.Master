@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="EventHub.MasterPages.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="../Styles/MasterAdminStyle.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function confirmLogout() {
+            return confirm("Are you sure you want to log out?");
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header>
+              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="AdminDashboard.aspx">EventHub</a>
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="AdminDashboard.aspx">Dashboard</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="ManageEvents.aspx">Manage Events</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="ManageUsers.aspx">Manage Users</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="Reports.aspx">Reports</a>
+                      </li>
+                      <li class="nav-item">
+                        <%--<a class="nav-link text-danger" href="Logout.aspx">Logout</a>--%>
+                          <%--<asp:HyperLink ID="Logout" NavigateUrl="AdminDashboard.aspx" runat="server">Logout</asp:HyperLink>--%>
+                          <%--<asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" />--%>
+                          <asp:Button 
+                              ID="Logout" 
+                              runat="server" 
+                              Text="Logout" 
+                              OnClick="Logout_Click" 
+                              OnClientClick="return confirmLogout();" 
+                              CssClass="nav-link text-danger" />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </header>
+            <main>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+            <footer class="bg-dark text-white text-center py-3">
+                <div class="container">
+                  <p class="mb-0">&copy; 2024 EventHub. All rights reserved.</p>
+                  <p class="mb-0">
+                    Contact Support:
+                    <a href="mailto:support@eventhub.com" class="text-white"
+                      >support@eventhub.com</a
+                    >
+                  </p>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

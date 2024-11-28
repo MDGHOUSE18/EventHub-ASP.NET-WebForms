@@ -1,0 +1,189 @@
+﻿/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Event Title (for both login and signup) */
+.event-title {
+    font-family: 'Dancing Script', cursive; /* Apply the curly calligraphy font */
+    font-size: 3em;
+    color: black; /* Black color for the text */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 20px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 30px auto;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for Login and Signup forms */
+.login-container, .signup-container {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+
+/*This styling will ensure the "Show Password" text looks smaller, cleaner, and better aligned with the checkbox.*/
+.small-text {
+    font-size: 12px; /* Adjust size to make it smaller */
+    color: #555; /* Optional: Change color */
+    vertical-align: middle; /* Align text with checkbox */
+    margin-left: 5px; /* Space between checkbox and text */
+}
+
+/* Input Fields Styling */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+    /* Focused Input Fields Styling */
+    input[type="text"]:focus, input[type="password"]:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+    }
+
+/* Error Message Styling */
+.error-message {
+    color: #d9534f;
+    font-size: 12px;
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    /* Button Hover Effect */
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Bottom Text (Links) Styling */
+.bottom-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+    .bottom-text a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .bottom-text a:hover {
+            text-decoration: underline;
+        }
+
+/* Media Queries for Responsiveness */
+/*@media (max-width: 768px) {*/ /* Tablet and smaller devices */
+    
+    /*body{
+        background-color:black;
+    }
+    .login-container, .signup-container {
+        width: 90%;*/ /* Adjust width to fit the screen */
+        /*padding: 15px;
+    }
+
+    .event-title {
+        font-size: 2.5em;*/ /* Adjust font size */
+        /*padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 13px;*/ /* Adjust font size for inputs */
+    /*}
+
+    .btn {
+        font-size: 15px;*/ /* Adjust button font size */
+        /*padding: 8px;
+    }
+
+    .small-text {
+        font-size: 11px;*/ /* Smaller text for "Show Password" */
+    /*}
+}
+
+@media (max-width: 480px) {*/ /* Mobile devices */
+    /*body{
+        background-color:red;
+    }
+    .login-container, .signup-container {
+        width: 95%;*/ /* Maximize screen utilization */
+        /*padding: 10px;
+    }
+
+    .event-title {
+        font-size: 2em;*/ /* Further reduce font size */
+    /*}
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 7px;
+    }
+
+    .small-text {
+        font-size: 10px;
+    }
+}*/
