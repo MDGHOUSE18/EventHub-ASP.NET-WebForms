@@ -68,10 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\Admin\AdminDashboard.aspx" />
+    <Content Include="Pages\Admin\EditEvent.aspx" />
+    <Content Include="Pages\Admin\ManageEvents.aspx" />
+    <Content Include="Pages\Shared\Logout.aspx" />
     <Content Include="Pages\Shared\Signin.aspx" />
     <Content Include="Pages\Shared\Signup.aspx" />
     <Content Include="Pages\User\UserDashboard.aspx" />
     <Content Include="Scripts\AdminMasterPage.js" />
+    <Content Include="Scripts\AdminnMS.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Styles\MasterAdminStyle.css" />
     <Content Include="Styles\Styles.css" />
@@ -99,6 +103,27 @@
     </Compile>
     <Compile Include="Pages\Admin\AdminDashboard.aspx.designer.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\EditEvent.aspx.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\EditEvent.aspx.designer.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ManageEvents.aspx.cs">
+      <DependentUpon>ManageEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ManageEvents.aspx.designer.cs">
+      <DependentUpon>ManageEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shared\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\Signin.aspx.cs">
       <DependentUpon>Signin.aspx</DependentUpon>
@@ -135,9 +160,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Theme\" />
     <Folder Include="Data\" />
-    <Folder Include="Images\" />
+    <Folder Include="EventImages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

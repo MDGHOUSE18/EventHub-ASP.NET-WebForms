@@ -41,7 +41,6 @@
                 <asp:HyperLink ID="Signup" runat="server" NavigateUrl="~/Pages/Shared/Signup.aspx">Sign up</asp:HyperLink>
             </div>
         </div>
-        <%--<script src="../../Scripts/custom.js"></script>--%>
     </form>
 </body>
 </html>
