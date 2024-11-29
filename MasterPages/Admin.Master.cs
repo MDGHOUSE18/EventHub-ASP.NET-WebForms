@@ -11,14 +11,19 @@ namespace EventHub.MasterPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Name"] != null)
+            if (!IsPostBack)
             {
-                Response.Write("Welcome to Admin Dashboard " + Session["Name"]);
+                if (Session["Name"] != null)
+                {
+                    string script = "alert('Welcome to Admin Dashboard " + Session["Name"] + "');";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "WelcomeAlert", script, true);
+                }
+                else
+                {
+                    Response.Redirect("~/Page/Shared/LoginForm.aspx");
+                }
             }
-            else
-            {
-                Response.Redirect("~/Page/Shared/LoginForm.aspx");
-            }
+            
         }
 
         protected void Logout_Click(object sender, EventArgs e)

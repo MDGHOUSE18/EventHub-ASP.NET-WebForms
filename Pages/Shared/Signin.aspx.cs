@@ -66,7 +66,8 @@ namespace EventHub.Pages.Shared
                     // Redirect user based on role
                     if (Session["Role"].ToString().ToLower() == "admin")
                     {
-                        Response.Redirect("~/Pages/Admin/AdminDashboard.aspx");
+                        //Response.Redirect("~/Pages/Admin/AdminDashboard.aspx");
+                        Response.Redirect("~/Pages/Admin/ManageEvents.aspx");
                     }
                     else
                     {
