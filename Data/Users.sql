@@ -95,14 +95,14 @@ BEGIN
         WHERE UserID = @UserId;
 
         -- Return the Email, Name, and Role of the user
-        SELECT Email, FullName, Role
+        SELECT UserID,Email, FullName, Role
         FROM Users
         WHERE UserId = @UserId;
     END
     ELSE
     BEGIN
         -- If the user does not exist, return NULL values for the fields
-        SELECT NULL AS Email, NULL AS Name, NULL AS Role;
+        SELECT NULL AS UserID,NULL AS Email, NULL AS Name, NULL AS Role;
     END
 END;
 
@@ -111,4 +111,11 @@ EXEC GetUserByEmail 'ghouse@gmail.com';
 
 EXEC Login 'ghouse@gmail.com','095a6369a0958ff1e596b4974550f109f00cb8cc2e35caf852692cd688073b1f';
 
-SELECT * FROM Users WHERE Email='ghouse@gmail.com' AND PasswordHash='095a6369a0958ff1e596b4974550f109f00cb8cc2e35caf852692cd688073b1f'
+CREATE OR ALTER PROCEDURE ChangeIsActiveStatus
+	@UserID int
+AS
+BEGIN
+	UPDATE Users
+	SET IsActive=0
+	WHERE UserID=@UserID;
+END;

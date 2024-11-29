@@ -44,14 +44,15 @@ INSERT INTO Events (EventName, EventDate, Description, Location) VALUES
 ('Kolkata Art Exhibition', '2024-12-25', 'An exhibition showcasing works of renowned artists, with interactive art sessions and workshops.', 'Kolkata, West Bengal'),
 ('Jaipur Literature Festival', '2024-12-30', 'India’s largest literature festival, attracting authors, poets, and thinkers from around the world.', 'Jaipur, Rajasthan'),
 ('Varanasi Spiritual Retreat', '2024-12-01', 'A serene and spiritual retreat offering yoga, meditation, and spiritual teachings on the banks of the Ganges.', 'Varanasi, Uttar Pradesh');
+EXEC GetEvent 1;
 
-
---CREATE OR ALTER PROCEDURE GetAllEvents
---AS
---BEGIN
---    SELECT *
---    FROM Events;
---END;
+CREATE OR ALTER PROCEDURE GetEvent
+	@EventID INT
+AS
+BEGIN
+    SELECT * FROM Events
+	WHERE EventID = @EventID;
+END;
 CREATE OR ALTER PROCEDURE GetAllEvents
 AS
 BEGIN
@@ -66,7 +67,7 @@ BEGIN
     DELETE FROM Events
     WHERE EventID = @EventID;
 END
-
+--For Updating Modal
 CREATE OR ALTER PROCEDURE GetEventByID
     @EventID INT
 AS
@@ -140,4 +141,29 @@ BEGIN
     WHERE EventID = @EventID;
 END
 
+CREATE PROCEDURE AddEvent
+    @EventName NVARCHAR(100),
+    @EventDate DATETIME,
+    @Description NVARCHAR(500),
+    @Location NVARCHAR(200),
+    @EventImage NVARCHAR(255)
+AS
+BEGIN
+    INSERT INTO Events (EventName, EventDate, Description, Location, Images)
+    VALUES (@EventName, @EventDate, @Description, @Location, @EventImage)
+END
+
+
 SELECT * FROM dbo.Events;
+
+
+CREATE PROCEDURE GetAllEventsBYSort
+    @SortExpression NVARCHAR(100),
+    @SortDirection NVARCHAR(4)
+AS
+BEGIN
+    DECLARE @sql NVARCHAR(MAX)
+
+    SET @sql = 'SELECT * FROM Events ORDER BY ' + @SortExpression + ' ' + @SortDirection
+    EXEC sp_executesql @sql
+END

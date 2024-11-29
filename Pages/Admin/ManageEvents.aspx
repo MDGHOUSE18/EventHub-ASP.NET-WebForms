@@ -7,7 +7,11 @@
         <h2 class="text-center m-2">Manage Events</h2>
         <asp:Button ID="AddEvent" runat="server" Text="Add Event" CssClass="btn btn-primary btn-sm px-4 py-2" OnClick="AddEvent_Click" />
     </div>
-    <asp:GridView ID="ManageEventsGrid" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped table-hover text-center" OnRowCommand="ManageEventsGrid_RowCommand" OnRowDataBound="ManageEventsGrid_RowDataBound" >
+    <asp:GridView
+        ID="ManageEventsGrid" runat="server" AutoGenerateColumns="False" 
+        CssClass="table table-bordered table-striped table-hover text-center" 
+        OnRowCommand="ManageEventsGrid_RowCommand" OnRowDataBound="ManageEventsGrid_RowDataBound" 
+        AllowPaging="true" PageSize="5" OnPageIndexChanging="ManageEventsGrid_PageIndexChanging">
         <Columns>
 
             <%-- Hidden EventID Column --%>

@@ -70,6 +70,7 @@
     <Content Include="Pages\Admin\AdminDashboard.aspx" />
     <Content Include="Pages\Admin\EditEvent.aspx" />
     <Content Include="Pages\Admin\ManageEvents.aspx" />
+    <Content Include="Pages\Admin\ManageUsers.aspx" />
     <Content Include="Pages\Shared\Logout.aspx" />
     <Content Include="Pages\Shared\Signin.aspx" />
     <Content Include="Pages\Shared\Signup.aspx" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="Pages\Admin\ManageEvents.aspx.designer.cs">
       <DependentUpon>ManageEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>

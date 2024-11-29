@@ -30,43 +30,28 @@ namespace EventHub.Pages.Shared
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@email", UserTextBox.Text);
                 cmd.Parameters.AddWithValue("@password", hashedPassword);
-                // Inject JavaScript to log to browser console
                 string script = $"console.log('Username: {UserTextBox.Text.ToString()}'); console.log('Password: {hashedPassword}');";
                 ClientScript.RegisterStartupScript(this.GetType(), "consoleLog", script, true);
 
-                // Declare the output parameter
-                //SqlParameter resultParam = new SqlParameter("@Result", SqlDbType.Int);
-                //resultParam.Direction = ParameterDirection.Output;
-
-                // Add the output parameter to the command
-                //cmd.Parameters.Add(resultParam);
 
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                //cmd.ExecuteNonQuery();
-                //cmd.ExecuteScalar();
-                //int result = Convert.ToInt32(resultParam.Value);
                 if (reader.HasRows)
                 {
-                    // Loop through the result set (though there should only be one row)
                     while (reader.Read())
                     {
-                        // Directly retrieve the user details from the reader
+                        Session["UserId"] = Convert.ToInt32(reader["UserId"]);
                         Session["Email"] = reader["Email"].ToString();
                         Session["Name"] = reader["FullName"].ToString();
                         Session["Role"] = reader["Role"].ToString();
                     }
 
-                    // Close the reader
                     reader.Close();
 
-                    // Show success message
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Login Successful!')</script>");
 
-                    // Redirect user based on role
                     if (Session["Role"].ToString().ToLower() == "admin")
                     {
-                        //Response.Redirect("~/Pages/Admin/AdminDashboard.aspx");
                         Response.Redirect("~/Pages/Admin/ManageEvents.aspx");
                     }
                     else

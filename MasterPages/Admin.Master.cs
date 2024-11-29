@@ -11,19 +11,27 @@ namespace EventHub.MasterPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack) // Trigger only on the initial page load, not on postbacks
             {
                 if (Session["Name"] != null)
                 {
-                    string script = "alert('Welcome to Admin Dashboard " + Session["Name"] + "');";
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "WelcomeAlert", script, true);
+                    // Show the welcome message only once after login
+                    if (Session["WelcomeShown"] == null || (bool)Session["WelcomeShown"] == false)
+                    {
+                        string script = "alert('Welcome to Admin Dashboard " + Session["Name"] + "');";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "WelcomeAlert", script, true);
+
+                        // Mark the welcome message as shown
+                        Session["WelcomeShown"] = true;
+                    }
                 }
                 else
                 {
+                    // Redirect to login page if session is missing
                     Response.Redirect("~/Page/Shared/LoginForm.aspx");
                 }
             }
-            
+
         }
 
         protected void Logout_Click(object sender, EventArgs e)

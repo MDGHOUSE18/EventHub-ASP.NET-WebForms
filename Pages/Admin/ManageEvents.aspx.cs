@@ -21,6 +21,8 @@ namespace EventHub.Pages.Admin
             
         }
 
+
+
         // Method to fetch and display all events
         private void GetEvents()
         {
@@ -209,6 +211,11 @@ namespace EventHub.Pages.Admin
         {
 
         }
+        protected void ManageEventsGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ManageEventsGrid.PageIndex = e.NewPageIndex;
+            GetEvents();
+        }
 
         protected void AddEvent_Click(object sender, EventArgs e)
         {
@@ -260,5 +267,7 @@ namespace EventHub.Pages.Admin
             }
 
         }
+
+        
     }
 }
