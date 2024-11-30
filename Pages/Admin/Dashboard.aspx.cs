@@ -15,9 +15,26 @@ namespace EventHub.Pages.Admin
         string cs = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            GetSumary();
             GetAttendeesCount();
             GetAttendees();
             GetAttendeesCountForEachEvent();
+        }
+        private void GetSumary()
+        {
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand("GetSummary", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    TotalUsers.Text = reader["TotalUsers"].ToString();
+                    TotalEvents.Text = reader["TotalEvents"].ToString();
+                    RegisteredUsers.Text = reader["RegisteredUsers"].ToString();
+                }
+            }
         }
         private void GetAttendeesCount()
         {

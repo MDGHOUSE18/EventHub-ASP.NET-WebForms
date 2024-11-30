@@ -15,6 +15,33 @@ namespace EventHub.Pages.Admin
     {
 
         /// <summary>
+        /// TotalUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal TotalUsers;
+
+        /// <summary>
+        /// TotalEvents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal TotalEvents;
+
+        /// <summary>
+        /// Registered Users control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal RegisteredUsers;
+        
+        /// <summary>
         /// eNameLabel control.
         /// </summary>
         /// <remarks>

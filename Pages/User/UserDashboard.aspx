@@ -46,12 +46,12 @@
 
 
     
-    <h1>Event Repeater</h1>
-    <div class="row">
-        <asp:Repeater ID="UserRepeater" runat="server">
+    <h1>All Events</h1>
+    <div class="row justify-content-center">
+        <asp:Repeater ID="UserRepeater" runat="server" OnItemCommand="UserRepeater_ItemCommand" >
             <ItemTemplate>
-                <div class="col-md-3 mb-4 px-1">
-                    <div class="card card-hover" style="width: 20rem; height: 25rem;">
+                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 mr-5 px-1">
+                    <div class="card card-hover m-auto" style="width: 16rem; height: 23rem;">
                         <asp:Image ID="EventImage" runat="server" ImageUrl='<%# Eval("Images") %>' 
                             CssClass="card-img-top" alt='~/EventImages/default-image.jpg'
                             Width="100%" Height="200"/>
@@ -59,7 +59,7 @@
                             
                             <h5 class="card-title"><%# Eval("EventName") %></h5>
                             <p class="card-text"><strong>Event Date:</strong> <%# Eval("EventDate", "{0:yyyy-MM-dd}") %></p>
-                            <p class="card-text"><strong>Location:</strong> <%# Eval("Location") %></p>
+                            <%--<p class="card-text"><strong>Location:</strong> <%# Eval("Location") %></p>--%>
                             <asp:Button ID="EventDetailsButton" runat="server" Text="Event Details" 
                                         CommandName="EventDetails" CommandArgument='<%# Eval("EventID") %>' 
                                         CssClass="btn btn-info btn-sm" />

@@ -40,7 +40,7 @@ namespace EventHub.Pages.User
             }
         }
 
-        protected void ManageEventsGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void UserRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "EventDetails")
             {

@@ -52,7 +52,7 @@ namespace EventHub.Pages.Shared
 
                     if (Session["Role"].ToString().ToLower() == "admin")
                     {
-                        Response.Redirect("~/Pages/Admin/ManageEvents.aspx");
+                        Response.Redirect("~/Pages/Admin/Dashboard.aspx");
                     }
                     else
                     {
