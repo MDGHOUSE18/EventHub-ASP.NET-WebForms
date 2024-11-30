@@ -32,8 +32,8 @@ namespace EventHub.Pages.User
                 DataSet ds = new DataSet();
                 sda.Fill(ds);
 
-                UserGrid.DataSource = ds;
-                UserGrid.DataBind();
+                //UserGrid.DataSource = ds;
+                //UserGrid.DataBind();
 
                 UserRepeater.DataSource = ds;
                 UserRepeater.DataBind();
@@ -93,7 +93,7 @@ namespace EventHub.Pages.User
         }
         protected void ManageEventsGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            UserGrid.PageIndex = e.NewPageIndex;
+            //UserGrid.PageIndex = e.NewPageIndex;
             GetEvents();
         }
     }

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>This is a UserDasboard</h1>
+    <%--<h1>This is a UserDasboard</h1>
     <asp:GridView ID="UserGrid" runat="server"
         AutoGenerateColumns="False" 
         CssClass="table table-bordered table-striped table-hover text-center" 
@@ -10,10 +10,8 @@
         AllowPaging="true" PageSize="5" OnPageIndexChanging="ManageEventsGrid_PageIndexChanging"
     >
         <Columns>
-            <%-- Hidden EventID Column --%>
             <asp:BoundField DataField="EventID" HeaderText="Event ID" SortExpression="EventID" Visible="False" />
 
-            <%-- Serial Number Column --%>
             <asp:TemplateField HeaderText="SNo">
                 <ItemTemplate>
                     <%# Container.DataItemIndex + 1 %> <!-- Serial number based on the row index -->
@@ -21,15 +19,11 @@
             </asp:TemplateField>
 
 
-            <%-- Event Name --%>
             <asp:BoundField DataField="EventName" HeaderText="Event Name" />
 
-            <%-- Event Date --%>
             <asp:BoundField DataField="EventDate" HeaderText="Event Date" DataFormatString="{0:yyyy-MM-dd}" />
 
-            <%-- Location --%>
             <asp:BoundField DataField="Location" HeaderText="Location" />
-            <%-- Image Field --%>
             <asp:TemplateField HeaderText="Event Image">
                 <ItemTemplate>
                     <asp:Image ID="imgEventImage" runat="server" Width="100" ImageUrl='<%# Eval("Images") %>'/>
@@ -38,19 +32,17 @@
 
             <asp:TemplateField HeaderText="Actions">
                 <ItemTemplate>
-                    <%-- Event Details Button --%>
                     <asp:Button ID="EventDetailsButton" runat="server" Text="Event Details" 
                         CommandName="EventDetails" CommandArgument='<%# Eval("EventID") %>' 
                         CssClass="btn btn-info btn-sm me-2" />
 
-                   <%-- <%-- Edit Button 
                     <asp:Button ID="EditButton" runat="server" Text="Edit" CommandName="EditEvent" 
-                        CommandArgument='<%# Eval("EventID") %>' CssClass="btn btn-warning btn-sm me-2" /> --%>
+                        CommandArgument='<%# Eval("EventID") %>' CssClass="btn btn-warning btn-sm me-2" />
 
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-    </asp:GridView>
+    </asp:GridView>--%>
 
 
     
@@ -58,10 +50,13 @@
     <div class="row">
         <asp:Repeater ID="UserRepeater" runat="server">
             <ItemTemplate>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-3 mb-4 px-1">
+                    <div class="card card-hover" style="width: 20rem; height: 25rem;">
+                        <asp:Image ID="EventImage" runat="server" ImageUrl='<%# Eval("Images") %>' 
+                            CssClass="card-img-top" alt='~/EventImages/default-image.jpg'
+                            Width="100%" Height="200"/>
                         <div class="card-body">
-                            <img src="<%# Eval("Images") %>" class="card-img-top" alt="...">
+                            
                             <h5 class="card-title"><%# Eval("EventName") %></h5>
                             <p class="card-text"><strong>Event Date:</strong> <%# Eval("EventDate", "{0:yyyy-MM-dd}") %></p>
                             <p class="card-text"><strong>Location:</strong> <%# Eval("Location") %></p>

@@ -29,7 +29,7 @@
             <asp:BoundField DataField="EventName" HeaderText="Event Name" />
 
             <%-- Event Date --%>
-            <asp:BoundField DataField="EventDate" HeaderText="Event Date" DataFormatString="{0:yyyy-MM-dd}" />
+            <asp:BoundField DataField="EventDate" HeaderText="Event Date" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" />
 
 
             <%-- Images with Default Image if NULL --%>
@@ -136,7 +136,7 @@
                         <br />
 
                         <%-- Event Image --%>
-                        <asp:Label ID="Label10" runat="server" Text="Event Image:" CssClass="font-weight-bold"></asp:Label>
+                        <asp:Label ID="Label10" runat="server" Text="Event Image:" CssClass="font-weight-bold " ></asp:Label>
                         <br />
                         <%--<asp:Image ID="ImageEvent" runat="server"  CssClass="img-thumbnail" Width="200px" Height="150px" />--%>
                         <asp:Image ID="ImageEvent" runat="server" ImageUrl="~/Images/default-image.jpg" Width="200px" Height="150px" CssClass="img-thumbnail" />

@@ -99,11 +99,6 @@ BEGIN
         FROM Users
         WHERE UserId = @UserId;
     END
-    ELSE
-    BEGIN
-        -- If the user does not exist, return NULL values for the fields
-        SELECT NULL AS UserID,NULL AS Email, NULL AS Name, NULL AS Role;
-    END
 END;
 
 
@@ -119,3 +114,6 @@ BEGIN
 	SET IsActive=0
 	WHERE UserID=@UserID;
 END;
+
+EXEC ChangeIsActiveStatus 2;
+Select * FROM Users;

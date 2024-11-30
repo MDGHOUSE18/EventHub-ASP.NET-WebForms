@@ -11,23 +11,9 @@ CREATE TABLE Events (
     UpdatedAt DATETIME DEFAULT GETDATE()              -- Date and time when the event was last updated
 );
 
-CREATE TABLE Attendees (
-    AttendeeID INT IDENTITY(1,1) PRIMARY KEY,        -- Unique identifier for the attendee
-    EventID INT,                                     -- Foreign key linking to the Events table
-    UserID INT,                                      -- Foreign key linking to the Users table (assuming you have a Users table)
-    RegisteredAt DATETIME DEFAULT GETDATE(),          -- Date and time when the user registered for the event
-    FOREIGN KEY (EventID) REFERENCES Events(EventID),-- Foreign key relationship with the Events table
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)    -- Foreign key relationship with the Users table
-);
 
-CREATE TABLE Attendees (
-    AttendeeID INT IDENTITY(1,1) PRIMARY KEY,        -- Unique identifier for the attendee
-    EventID INT,                                     -- Foreign key linking to the Events table
-    UserID INT,                                      -- Foreign key linking to the Users table (assuming you have a Users table)
-    RegisteredAt DATETIME DEFAULT GETDATE(),          -- Date and time when the user registered for the event
-    FOREIGN KEY (EventID) REFERENCES Events(EventID),-- Foreign key relationship with the Events table
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)    -- Foreign key relationship with the Users table
-);
+
+
 
 -- Insert 10 Real-time Events in India
 
@@ -38,8 +24,6 @@ INSERT INTO Events (EventName, EventDate, Description, Location) VALUES
 ('Startup Expo 2024', '2024-12-10', 'A business and networking event for startups to meet investors and showcase their products.', 'Hyderabad, Telangana'),
 ('National Food Festival', '2024-12-12', 'A celebration of India’s diverse culinary heritage with food stalls, live cooking shows, and more.', 'Chennai, Tamil Nadu'),
 ('Pune International Film Festival', '2024-12-15', 'A celebration of world cinema with screenings, panel discussions, and awards.', 'Pune, Maharashtra'),
-
-INSERT INTO Events (EventName, EventDate, Description, Location) VALUES
 ('Goa Beach Party', '2024-12-20', 'A vibrant and lively beach party with DJ performances and beach activities.', 'Goa, Goa'),
 ('Kolkata Art Exhibition', '2024-12-25', 'An exhibition showcasing works of renowned artists, with interactive art sessions and workshops.', 'Kolkata, West Bengal'),
 ('Jaipur Literature Festival', '2024-12-30', 'India’s largest literature festival, attracting authors, poets, and thinkers from around the world.', 'Jaipur, Rajasthan'),

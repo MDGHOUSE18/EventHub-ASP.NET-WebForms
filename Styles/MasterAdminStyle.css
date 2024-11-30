@@ -19,3 +19,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Hover effect for the card */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px); /* Moves the card upwards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+    /* Optional: Change card image opacity on hover */
+    .card-hover:hover .card-img-top {
+        opacity: 0.8;
+    }
+
