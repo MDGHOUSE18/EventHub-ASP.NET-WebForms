@@ -21,7 +21,7 @@ The Online Event Registration System is a web application built using ASP.NET We
 - **Error Handling**: Displays error messages for invalid actions such as duplicate registrations.
 - **Data Validation**: Validates user inputs on both client and server sides.
 
-## Technical Requirements
+## Technologies Used
 
 ### Frontend:
 - ASP.NET WebForms for UI components.
