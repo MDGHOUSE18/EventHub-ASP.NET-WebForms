@@ -117,3 +117,13 @@ END;
 
 EXEC ChangeIsActiveStatus 2;
 Select * FROM Users;
+
+CREATE OR ALTER PROCEDURE GetUser
+	@UserID int
+AS
+BEGIN
+	--Select UserID,FullName,Email,PasswordHash,Role
+	Select *
+	From Users
+	WHERE UserID=@UserID;
+END;

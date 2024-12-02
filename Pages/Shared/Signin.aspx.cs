@@ -56,7 +56,7 @@ namespace EventHub.Pages.Shared
                     }
                     else
                     {
-                        Response.Redirect("~/Pages/User/UserDashboard.aspx");
+                        Response.Redirect("~/Pages/User/Home.aspx");
                     }
 
                 }

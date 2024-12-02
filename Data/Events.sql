@@ -151,3 +151,18 @@ BEGIN
     SET @sql = 'SELECT * FROM Events ORDER BY ' + @SortExpression + ' ' + @SortDirection
     EXEC sp_executesql @sql
 END
+
+
+CREATE PROCEDURE GetAllEventsWithPagination
+(
+    @PageIndex INT,
+    @PageSize INT
+)
+AS
+BEGIN
+    SELECT * FROM Events
+    ORDER BY EventDate
+    OFFSET @PageIndex * @PageSize ROWS
+    FETCH NEXT @PageSize ROWS ONLY;
+END
+

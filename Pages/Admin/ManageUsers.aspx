@@ -32,5 +32,6 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+    <asp:Button ID="Dashboard" runat="server" Text="Back to Dashboard" OnClick="Dashboard_Click" CssClass="btn btn-outline-primary"/>
 
 </asp:Content>

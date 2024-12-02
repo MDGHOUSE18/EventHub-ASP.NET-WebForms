@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/User.Master" AutoEventWireup="true" CodeBehind="UserDashboard.aspx.cs" Inherits="EventHub.Pages.User.UserDashboard1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/User.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="EventHub.Pages.User.UserDashboard1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -46,23 +46,35 @@
 
 
     
-    <h1>All Events</h1>
+    <%--<h1>All Events</h1>--%>
     <div class="row justify-content-center">
-        <asp:Repeater ID="UserRepeater" runat="server" OnItemCommand="UserRepeater_ItemCommand" >
+        <asp:Repeater ID="UserRepeater" runat="server" OnItemCommand="UserRepeater_ItemCommand"
+            OnItemDataBound="UserRepeater_ItemDataBound">
             <ItemTemplate>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 mr-5 px-1">
-                    <div class="card card-hover m-auto" style="width: 16rem; height: 23rem;">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 px-1">
+                    <div class="card card-hover m-auto" style="width: 100%; height: 22rem;">
                         <asp:Image ID="EventImage" runat="server" ImageUrl='<%# Eval("Images") %>' 
                             CssClass="card-img-top" alt='~/EventImages/default-image.jpg'
-                            Width="100%" Height="200"/>
+                            Width="100%" Height="200" />
                         <div class="card-body">
-                            
                             <h5 class="card-title"><%# Eval("EventName") %></h5>
                             <p class="card-text"><strong>Event Date:</strong> <%# Eval("EventDate", "{0:yyyy-MM-dd}") %></p>
-                            <%--<p class="card-text"><strong>Location:</strong> <%# Eval("Location") %></p>--%>
-                            <asp:Button ID="EventDetailsButton" runat="server" Text="Event Details" 
-                                        CommandName="EventDetails" CommandArgument='<%# Eval("EventID") %>' 
-                                        CssClass="btn btn-info btn-sm" />
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <!-- Event Details Button -->
+                                <asp:Button ID="EventDetailsButton" runat="server" Text="Event Details" 
+                                            CommandName="EventDetails" CommandArgument='<%# Eval("EventID") %>' 
+                                            CssClass="btn btn-info btn-sm" />
+
+                                <!-- Label for Already Registered -->
+                                <asp:Label ID="AlreadyRegisteredLabel" runat="server" Text="Already Registered" 
+                                           CssClass="text-danger" Visible="false"></asp:Label>
+
+                                <!-- Register Button -->
+                                <asp:Button ID="Register" runat="server" Text="Register Now" 
+                                            CommandName="EventRegister" CommandArgument='<%# Eval("EventID") %>' 
+                                            CssClass="btn btn-info btn-sm mt-2" Visible="false" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,26 +82,14 @@
         </asp:Repeater>
     </div>
 
-
-    <%-- Pagination Section --%>
-    <div class="d-flex justify-content-center mt-4">
-        <asp:GridView ID="GridView1" runat="server" 
-                      AutoGenerateColumns="False" 
-                      CssClass="table table-bordered table-striped table-hover text-center" 
-                      AllowPaging="true" 
-                      PageSize="5" 
-                      OnPageIndexChanging="ManageEventsGrid_PageIndexChanging" 
-                      Visible="false"> <%-- Hide GridView and use the Repeater instead --%>
-            <Columns>
-                <asp:TemplateField>
-                    <ItemTemplate>
-                        <asp:Label runat="server" Text="Page:"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-            <PagerSettings Mode="Numeric" PageButtonCount="5" />
-        </asp:GridView>
+    <div class="pagination">
+        <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" CssClass="btn btn-secondary" />
+        <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn btn-secondary" />
+        <asp:Label ID="lblPageInfo" runat="server" CssClass="ml-3" />
     </div>
+
+
+
     <%-- Event Details Modal --%>
     <div class="modal fade" id="eventDetailsModal" tabindex="-1" aria-labelledby="eventDetailsModalLabel" aria-hidden="true">
         <div class="modal-dialog">

@@ -86,4 +86,86 @@ BEGIN
         e.EventDate ASC;
 END;
 
+CREATE OR ALTER PROCEDURE GetSummary
+AS
+BEGIN
+	SELECT 
+		(SELECT COUNT(DISTINCT a.AttendeeID) FROM Attendees a) AS RegisteredUsers,
+		(SELECT COUNT(EventID) FROM Events) AS TotalEvents,
+		(SELECT COUNT(UserID) FROM Users) AS TotalUsers;
+END;
+
+CREATE OR ALTER PROCEDURE RegisterEvent
+	@EventId int,
+	@UserId int
+AS
+BEGIN
+	INSERT INTO Attendees(EventID,UserID)
+	Values(@EventId,@UserId);
+END;
+
+CREATE OR ALTER PROCEDURE UnRegisterEvent
+    @EventId INT,
+    @UserId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Delete the registration entry from the Attendees table to unregister the user from the event
+    DELETE FROM Attendees
+    WHERE EventID = @EventId AND UserID = @UserId;
+END;
+
+
+
+CREATE OR ALTER PROCEDURE CheckUserRegistration
+    @UserID INT,
+    @EventID INT
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Attendees WHERE UserID = @UserID AND EventID = @EventID)
+    BEGIN
+        SELECT 1  -- User is registered
+    END
+    ELSE
+    BEGIN
+        SELECT 0  -- User is not registered
+    END
+END
+
+
+
+CREATE PROCEDURE GetEventsWithPagination
+    @StartIndex INT,
+    @EndIndex INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT * FROM (
+        SELECT ROW_NUMBER() OVER (ORDER BY EventDate DESC) AS RowNum, *
+        FROM Events
+    ) AS RowConstrainedResult
+    WHERE RowNum > @StartIndex AND RowNum <= @EndIndex
+    ORDER BY RowNum;
+END;
+
+CREATE PROCEDURE MyEventsWithPagination
+    @UserId INT,
+	@StartIndex INT,
+    @EndIndex INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT * FROM (
+    SELECT ROW_NUMBER() OVER (ORDER BY e.EventDate DESC) AS RowNum, e.*
+    FROM Events e
+    INNER JOIN Attendees a ON e.EventID = a.EventID
+    WHERE a.UserID = @UserId
+	) AS RowConstrainedResult
+	WHERE RowNum > @StartIndex AND RowNum <= @EndIndex
+	ORDER BY RowNum;
+END;
+
 

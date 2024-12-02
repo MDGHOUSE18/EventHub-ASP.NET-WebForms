@@ -40,5 +40,10 @@ namespace EventHub.Pages.Admin
 
             }
         }
+
+        protected void Dashboard_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Dashboard.aspx");
+        }
     }
 }

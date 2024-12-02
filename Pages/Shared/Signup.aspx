@@ -35,6 +35,7 @@
                 <asp:TextBox ID="UserTextBox" runat="server" placeholder="Enter your email" ></asp:TextBox>
             </div>
             <div>
+                
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PassTextBox" Display="Dynamic" ErrorMessage="Please enter a password" CssClass="error-message"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="PasswordValidator" runat="server" ControlToValidate="PassTextBox" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" Display="Dynamic" ErrorMessage="Password must be at least 8 characters long and contain both letters and numbers" ForeColor="Red" CssClass="error-message"></asp:RegularExpressionValidator>
                 <label for="PassTextBox">Password</label>
@@ -42,10 +43,12 @@
                 <span class="small-text"><input type="checkbox" onclick="ShowPassword(this)" /> Show Password</span>
             </div>
             <div>
+                
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ConfirmPassTextBox" Display="Dynamic" ErrorMessage="Please confirm your password" CssClass="error-message"></asp:RequiredFieldValidator>
                 <asp:CompareValidator ID="ComparePasswordValidator" runat="server" ControlToValidate="ConfirmPassTextBox" ControlToCompare="PassTextBox" Display="Dynamic" ErrorMessage="Passwords do not match" ForeColor="Red" CssClass="error-message"></asp:CompareValidator>
                 <label for="ConfirmPassTextBox">Confirm Password</label>
                 <asp:TextBox ID="ConfirmPassTextBox" runat="server" TextMode="Password" placeholder="Confirm your password"></asp:TextBox>
+                <span class="small-text"><input type="checkbox" onclick="ShowPassword(this)" /> Show Confirm Password</span>
             </div>
             <asp:Button ID="Register" runat="server" OnClick="Register_Click" Text="Sign Up" CssClass="btn" />
             <div class="bottom-text">

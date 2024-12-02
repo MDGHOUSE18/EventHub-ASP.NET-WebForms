@@ -75,7 +75,9 @@
     <Content Include="Pages\Shared\Logout.aspx" />
     <Content Include="Pages\Shared\Signin.aspx" />
     <Content Include="Pages\Shared\Signup.aspx" />
-    <Content Include="Pages\User\UserDashboard.aspx" />
+    <Content Include="Pages\User\Home.aspx" />
+    <Content Include="Pages\User\MyEvents.aspx" />
+    <Content Include="Pages\User\Profile.aspx" />
     <Content Include="Scripts\AdminMasterPage.js" />
     <Content Include="Scripts\AdminnMS.js" />
     <Content Include="Scripts\custom.js" />
@@ -155,12 +157,26 @@
     <Compile Include="Pages\Shared\Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\User\UserDashboard.aspx.cs">
-      <DependentUpon>UserDashboard.aspx</DependentUpon>
+    <Compile Include="Pages\User\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\User\UserDashboard.aspx.designer.cs">
-      <DependentUpon>UserDashboard.aspx</DependentUpon>
+    <Compile Include="Pages\User\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User\MyEvents.aspx.cs">
+      <DependentUpon>MyEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\MyEvents.aspx.designer.cs">
+      <DependentUpon>MyEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

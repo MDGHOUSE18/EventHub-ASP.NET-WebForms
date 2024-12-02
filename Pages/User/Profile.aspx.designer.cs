@@ -7,29 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EventHub.Pages.Admin
+namespace EventHub.Pages.User
 {
 
 
-    public partial class ManageUsers
+    public partial class Profile
     {
 
         /// <summary>
-        /// UsersGrid control.
+        /// ProfileGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView UsersGrid;
+        protected global::System.Web.UI.WebControls.GridView ProfileGridView;
 
         /// <summary>
-        /// Dashboard control.
+        /// ProfileRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Dashboard;
+        protected global::System.Web.UI.WebControls.Repeater ProfileRepeater;
     }
 }

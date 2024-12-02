@@ -68,6 +68,7 @@
 
         </Columns>
     </asp:GridView>
+    <asp:Button ID="Dashboard" runat="server" Text="Back to Dashboard" OnClick="Dashboard_Click" CssClass="btn btn-outline-primary"/>
     <%-- Add Event Modal --%>
     <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
     <div class="modal-dialog">
