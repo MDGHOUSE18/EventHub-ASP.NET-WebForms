@@ -11,7 +11,7 @@ namespace EventHub.Pages.Shared
 {
 
 
-    public partial class Signin
+    public partial class ForgotPassword
     {
 
         /// <summary>
@@ -60,6 +60,15 @@ namespace EventHub.Pages.Shared
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
+        /// PasswordValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator PasswordValidator;
+
+        /// <summary>
         /// PassTextBox control.
         /// </summary>
         /// <remarks>
@@ -69,22 +78,40 @@ namespace EventHub.Pages.Shared
         protected global::System.Web.UI.WebControls.TextBox PassTextBox;
 
         /// <summary>
-        /// Login control.
+        /// RequiredFieldValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Login;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
-        /// HyperLink1 control.
+        /// ComparePasswordValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.CompareValidator ComparePasswordValidator;
+
+        /// <summary>
+        /// ConfirmPassTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ConfirmPassTextBox;
+
+        /// <summary>
+        /// ResetPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ResetPass;
 
         /// <summary>
         /// Signup control.

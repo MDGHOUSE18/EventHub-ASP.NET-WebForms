@@ -30,12 +30,19 @@
                 <asp:TextBox ID="UserTextBox" runat="server" placeholder="Enter your email" ></asp:TextBox>
             </div>
             <div>
-                <label for="PassTextBox">Password</label>
+                
+                    <label for="PassTextBox" style="display: inline;">Password</label>
+                    <span class="small-text" style="margin-left: 170px;"><input type="checkbox" onclick="ShowPassword(this)" /> Show Password</span>
+                
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PassTextBox" Display="Dynamic" ErrorMessage="Please enter a password" CssClass="error-message"></asp:RequiredFieldValidator>
-                <asp:TextBox ID="PassTextBox" runat="server" TextMode="Password" placeholder="Enter your password"></asp:TextBox>    
-                <span class="small-text"><input type="checkbox" onclick="ShowPassword(this)" /> Show Password</span>
+                <asp:TextBox ID="PassTextBox" runat="server" TextMode="Password" placeholder="Enter your password"></asp:TextBox>
             </div>
+
             <asp:Button ID="Login" runat="server" Text="Login" CssClass="btn" OnClick="Login_Click" />
+            <div class="bottom-text">
+                Forgot Password? 
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Pages/Shared/ForgotPassword.aspx">Click here</asp:HyperLink>
+            </div>
             <div class="bottom-text">
                 Don’t have an account? 
                 <asp:HyperLink ID="Signup" runat="server" NavigateUrl="~/Pages/Shared/Signup.aspx">Sign up</asp:HyperLink>

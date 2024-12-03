@@ -44,7 +44,7 @@
     </asp:Repeater>
 </div>
 <div class="d-flex justify-content-between align-items-center">
-    <asp:Button ID="Home" runat="server" Text="Back To Home" CssClass="btn btn-outline-primary"/>
+    <asp:Button ID="Home" runat="server" Text="Back To Home" CssClass="btn btn-outline-primary" PostBackUrl="~/Pages/User/Home.aspx" />
     <div class="pagination ">
         <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" CssClass="btn btn-secondary" />
         <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn btn-secondary" />

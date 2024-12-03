@@ -83,10 +83,10 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Home</a>
+                                    <a class="nav-link" href="Home.aspx">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">My Events</a>
+                                    <a class="nav-link" href="MyEvents.aspx">My Events</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#" data-toggle="modal" data-target="#profileModal">Profile</a>
@@ -131,7 +131,6 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editProfileModal" data-dismiss="modal">Edit Profile</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal" data-dismiss="modal">Change Password</button>
                             <button type="button" class="btn btn-danger" onclick="confirmLogout()">Logout</button>
                         </div>
                     </div>
@@ -177,39 +176,7 @@
                     </div>
                 </div>
             </div>
-            <%-- Profile Password Modal --%>
-  <%--          <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
-                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <asp:Panel ID="Panel2" runat="server" CssClass="form-group">
-                                <div class="mb-3">
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PassTextBox" Display="Dynamic" ErrorMessage="Please enter a password" CssClass="error-message"></asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="PasswordValidator" runat="server" ControlToValidate="PassTextBox" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" Display="Dynamic" ErrorMessage="Password must be at least 8 characters long and contain both letters and numbers" ForeColor="Red" CssClass="error-message"></asp:RegularExpressionValidator>
-                                    <asp:Label ID="Label5" runat="server" Text="New Password:"></asp:Label>
-                                    <span class="small-text"><input type="checkbox"data-target="PassTextBox" onclick="ShowPassword(this)" CssClass="form-control"/> Show</span>
-                                    <asp:TextBox ID="PassTextBox" runat="server" TextMode="Password" placeholder="Enter your password" CssClass="form-control"></asp:TextBox>
-                                </div>
-                                <div class="mb-3">                                    
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ConfirmPassTextBox" Display="Dynamic" ErrorMessage="Please confirm your password" CssClass="error-message"></asp:RequiredFieldValidator>
-                                    <asp:CompareValidator ID="ComparePasswordValidator" runat="server" ControlToValidate="ConfirmPassTextBox" ControlToCompare="PassTextBox" Display="Dynamic" ErrorMessage="Passwords do not match" ForeColor="Red" CssClass="error-message"></asp:CompareValidator>
-                                    <asp:Label ID="Label6" runat="server" Text="Confirm Password:"></asp:Label>
-                                    <span class="small-text"><input type="checkbox" data-target="ConfirmPassTextBox" onclick="ShowPassword(this)" CssClass="form-control"/> Show</span>
-                                    <asp:TextBox ID="ConfirmPassTextBox" runat="server" TextMode="Password" placeholder="Confirm your password" CssClass="form-control"></asp:TextBox>
-                                </div>
-                            </asp:Panel>
-                        </div>
-                        <div class="modal-footer">
-                            <asp:Button ID="Button1" runat="server" Text="Save Changes" CssClass="btn btn-success" OnClick="btnUpdatePassword_Click" />
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>--%>
+            
     </form>
 
 

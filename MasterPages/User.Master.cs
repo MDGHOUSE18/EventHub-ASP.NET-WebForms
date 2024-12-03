@@ -21,7 +21,7 @@ namespace EventHub.MasterPages
             if (Session["UserID"] == null)
             {
                 // Redirect to the login page if no user is logged in
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/Pages/Shared/Signin.aspx");
             }
             else
             {
@@ -100,42 +100,5 @@ namespace EventHub.MasterPages
 
 
 
-        //protected void btnUpdatePassword_Click(object sender, EventArgs e)
-        //{            
-        //    int userId = (int)Session["UserId"];
-        //    string newPassword = HashPassword(PassTextBox.Text);
-
-        //    using (SqlConnection con = new SqlConnection(cs))
-        //    {
-        //        string query = "UPDATE Users SET PasswordHash = @PasswordHash WHERE UserID = @UserID";
-        //        using (SqlCommand cmd = new SqlCommand(query, con))
-        //        {
-        //            cmd.Parameters.AddWithValue("@PasswordHash", newPassword); // Ideally, hash the password before storing it
-        //            cmd.Parameters.AddWithValue("@UserID", userId);
-
-        //            con.Open();
-        //            cmd.ExecuteNonQuery();
-        //        }
-        //    }
-
-        //    // Show success message and optionally close the modal
-        //    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Password updated successfully!');", true);
-        //    ScriptManager.RegisterStartupScript(this, this.GetType(), "closeModal", "$('#changePasswordModal').modal('hide');", true);
-        //}
-
-        private static string HashPassword(string password)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
     }
 }
